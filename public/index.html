@@ -1,17 +1,105 @@
 <!DOCTYPE html>
-<html ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <title>Kasutajaliidesed - Kodutöö 1</title>
-    <base href="/" target="_blank">
-    <!-- <link rel="icon" type="image/icon" href="favicon.ico" /> -->
-  </head>
-  <body>
-    <a ui-sref="view1">View1</a>
-    <a ui-sref="view2">View2</a>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
+Version: 3.7.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js" data-ng-app="MetronicApp"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js" data-ng-app="MetronicApp"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" data-ng-app="app">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<title data-ng-bind="'ÕIS | ' + $state.current.data.pageTitle"></title>
 
-    <div ui-view>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
 
-    </div>
-  </body>
+<base href="/" target="_blank">
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
+<link id="ng_load_plugins_before"/>
+<!-- END DYMANICLY LOADED CSS FILES -->
+
+<!-- BEGIN THEME STYLES -->
+<!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+
+<!-- END THEME STYLES -->
+
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body ng-controller="MainController" class="page-header-fixed page-sidebar-closed-hide-logo page-quick-sidebar-over-content page-on-load" ng-class="{'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+
+	<!-- BEGIN PAGE SPINNER -->
+	<div spinner-bar class="page-spinner-bar">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+	<!-- END PAGE SPINNER -->
+
+	<!-- BEGIN HEADER -->
+	<div ui-view="header" class="page-header navbar navbar-fixed-top">
+	</div>
+	<!-- END HEADER -->
+
+	<div class="clearfix">
+	</div>
+
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<div ui-view="sidebar" class="page-sidebar-wrapper">
+		</div>
+		<!-- END SIDEBAR -->
+
+		<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+
+				<!-- BEGIN ACTUAL CONTENT -->
+				<div ui-view="content" class="fade-in-up">
+				</div>
+				<!-- END ACTUAL CONTENT -->
+			</div>
+		</div>
+		<!-- END CONTENT -->
+
+	</div>
+	<!-- END CONTAINER -->
+
+	<!-- BEGIN FOOTER -->
+	<div ui-view="footer" class="page-footer">
+	</div>
+	<!-- END FOOTER -->
+
+</body>
+<!-- END BODY -->
 </html>
