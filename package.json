@@ -7,7 +7,7 @@
   "author": "Markus Peterson <marcus17777@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --hot --content-base './public'",
+    "start": "webpack-dev-server --hot",
     "build": "webpack --progress"
   },
   "devDependencies": {

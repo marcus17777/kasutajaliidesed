@@ -21,6 +21,14 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
   },
+  devServer: {
+    historyApiFallback: true,
+    // progress: true,
+    inline: true,
+    // https: true,
+    // port: 8081,
+    contentBase: path.resolve(__dirname, 'public'),
+  },
   module: {
     loaders: [
       {
