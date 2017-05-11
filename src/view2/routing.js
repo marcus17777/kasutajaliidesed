@@ -4,7 +4,7 @@ export default function routing($stateProvider) {
       url: '/view2/',
       parent: 'root',
       views: {
-        '@': {
+        '': {
           template: require('./template.html'),
           controller: 'View2Controller',
           controllerAs: 'ctrl'

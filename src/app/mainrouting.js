@@ -13,9 +13,9 @@ export default function mainrouting($locationProvider, $urlRouterProvider, $stat
         'sidebar': {
           template: require('../abstract_layouts/sidebar.template.html')
         },
-        // 'content': {
-        //   template: '<ui-view />'
-        // },
+        'content': {
+          template: '<div ui-view class="fade-in-up" />'
+        },
         'footer': {
           template: require('../abstract_layouts/footer.template.html')
         }
