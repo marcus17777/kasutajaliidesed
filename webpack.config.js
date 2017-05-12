@@ -76,9 +76,10 @@ module.exports = {
     extractSass,
     new webpack.ProvidePlugin({
       $: "jquery",
+      "window.$": "jquery",
       jquery: "jquery",
       "window.jQuery": "jquery",
-      jQuery:"jquery"
+      jQuery:"jquery",
     }),
   ]
 }

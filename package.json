@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^1.0.0",
     "bootstrap-sass": "^3.3.7",
     "jquery": "^3.2.1",

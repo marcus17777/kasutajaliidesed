@@ -6,120 +6,124 @@
 	<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
 	<!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
 	<!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-	<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
-		<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-		<li class="sidebar-search-wrapper">
-			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-			<!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
-			<!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-			<form class="sidebar-search sidebar-search-bordered" action="extra_search.html" method="POST">
-				<a href="javascript:;" class="remove">
-				<i class="icon-close"></i>
+	<div uib-accordion>
+		<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+			<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+			<li class="sidebar-search-wrapper">
+				<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+				<!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+				<!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+				<form class="sidebar-search sidebar-search-bordered" action="extra_search.html" method="POST">
+					<a href="javascript:;" class="remove">
+					<i class="icon-close"></i>
+					</a>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+						<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+						</span>
+					</div>
+				</form>
+				<!-- END RESPONSIVE QUICK SEARCH FORM -->
+			</li>
+			<li class="start">
+				<a ui-sref="dashboard">
+				<i class="icon-home"></i>
+				<span class="title">Kodu</span>
 				</a>
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search...">
-					<span class="input-group-btn">
-					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
-					</span>
-				</div>
-			</form>
-			<!-- END RESPONSIVE QUICK SEARCH FORM -->
-		</li>
-		<li class="start">
-			<a ui-sref="view1">
-			<i class="icon-home"></i>
-			<span class="title">Kodu</span>
-			</a>
-		</li>
-		<li>
-			<a ui-sref="view2">
-			<i class="icon-wrench"></i>
-			<span class="title">Registreerimised</span>
-			<span class="arrow "></span>
-			</a>
-			<ul class="sub-menu">
-				<li>
-					<a href="#/ui_bootstrap.html">
-					<i class="icon-puzzle"></i> Ainetele registreerimine </span>
-					</a>
-				</li>
-				<li>
-					<a href="#/file_upload.html">
-					<i class="icon-paper-clip"></i> Eksamitele registreerimine </span>
-					</a>
-				</li>
-				<li>
-					<a href="#/ui_select.html">
-					<i class="icon-check"></i> Kontrolltöödele registreerimine</span>
-					</a>
-				</li>
-			</ul>
-		</li>
-		<!-- <li>
-			<a href="javascript:;">
-			<i class="icon-wrench"></i>
-			<span class="title">jQuery Plugins</span>
-			<span class="arrow "></span>
-			</a>
-			<ul class="sub-menu">
-				<li>
-					<a href="#/form-tools">
-						<i class="icon-puzzle"></i> Form Tools
-					</a>
-				</li>
-				<li>
-					<a href="#/pickers">
-						<i class="icon-calendar"></i> Date & Time Pickers
-					</a>
-				</li>
-				<li>
-					<a href="#/dropdowns">
-						<i class="icon-refresh"></i> Custom Dropdowns
-					</a>
-				</li>
-				<li>
-					<a href="#/tree">
-						<i class="icon-share"></i> Tree View
-					</a>
-				</li>
-				<li>
+			</li>
+			<li uib-accordion-group>
+				<uib-accordion-heading>
 					<a href="javascript:;">
-						<i class="icon-briefcase"></i> Datatables
+						<i class="icon-wrench"></i>
+						<span class="title">Registreerimised</span>
 						<span class="arrow "></span>
 					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="#/datatables/advanced.html">
-							<i class="icon-tag"></i> Advanced Datatables
-							</a>
-						</li>
-						<li>
-							<a href="#/datatables/ajax.html">
-							<i class="icon-refresh"></i> Ajax Datatables
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</li> -->
-		<li>
-			<a href="#/profile/dashboard" id="sidebar_menu_link_profile">
-			<i class="icon-user"></i>
-			<span class="title">Isikuandmed</span>
-			</a>
-		</li>
-		<li>
-			<a href="#/todo">
-			<i class="icon-calendar"></i>
-			<span class="title"> Akadeemiline kalender</span>
-			</a>
-		</li>
-		<li>
-			<a href="../index.html" target="_blank">
-			<i class="icon-info"></i>
-			<span class="title">Õppeainete tagasiside</span>
-			</a>
-		</li>
-	</ul>
+				</uib-accordion-heading>
+				<ul class="sub-menu" style="display: block;">
+					<li>
+						<a href="#/ui_bootstrap.html">
+						<i class="icon-puzzle"></i> Ainetele registreerimine </span>
+						</a>
+					</li>
+					<li>
+						<a href="#/file_upload.html">
+						<i class="icon-paper-clip"></i> Eksamitele registreerimine </span>
+						</a>
+					</li>
+					<li>
+						<a href="#/ui_select.html">
+						<i class="icon-check"></i> Kontrolltöödele registreerimine</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<!-- <li>
+				<a href="javascript:;">
+				<i class="icon-wrench"></i>
+				<span class="title">jQuery Plugins</span>
+				<span class="arrow "></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="#/form-tools">
+							<i class="icon-puzzle"></i> Form Tools
+						</a>
+					</li>
+					<li>
+						<a href="#/pickers">
+							<i class="icon-calendar"></i> Date & Time Pickers
+						</a>
+					</li>
+					<li>
+						<a href="#/dropdowns">
+							<i class="icon-refresh"></i> Custom Dropdowns
+						</a>
+					</li>
+					<li>
+						<a href="#/tree">
+							<i class="icon-share"></i> Tree View
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-briefcase"></i> Datatables
+							<span class="arrow "></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="#/datatables/advanced.html">
+								<i class="icon-tag"></i> Advanced Datatables
+								</a>
+							</li>
+							<li>
+								<a href="#/datatables/ajax.html">
+								<i class="icon-refresh"></i> Ajax Datatables
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li> -->
+			<li>
+				<a ui-sref="view1" id="sidebar_menu_link_profile">
+				<i class="icon-user"></i>
+				<span class="title">Isikuandmed</span>
+				</a>
+			</li>
+			<li>
+				<a ui-sref="view2">
+				<i class="icon-calendar"></i>
+				<span class="title"> Akadeemiline kalender</span>
+				</a>
+			</li>
+			<li>
+				<a href="../index.html" target="_blank">
+				<i class="icon-info"></i>
+				<span class="title">Õppeainete tagasiside</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 	<!-- END SIDEBAR MENU -->
 </div>
