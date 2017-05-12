@@ -21,6 +21,7 @@ import Components from './components'
 
 import view1 from './view1'
 import view2 from './view2'
+import view3 from './view3'
 import dashboardView from './dashboard'
 
 angular.module('app', [
@@ -33,6 +34,7 @@ angular.module('app', [
   Components,
   view1,
   view2,
+  view3,
   dashboardView,
 ])
 .controller('MainController', MainController)
