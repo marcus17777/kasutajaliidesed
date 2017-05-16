@@ -5,7 +5,7 @@ export default function routing($stateProvider) {
       parent: 'root',
       views: {
         '': {
-          template: require('./template2.html'),
+          template: require('./template.html'),
           controller: 'View5Controller',
           controllerAs: 'ctrl'
         }
