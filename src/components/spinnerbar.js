@@ -1,23 +1,24 @@
-export default function spinnerBar($transitions) {
+export default function spinnerBar($rootScope) {
   return {
     link(scope, element, attrs) {
       element.addClass('hide'); // hide spinner bar by default
 
       // display the spinner bar whenever the route changes(the content part started loading)
-      $transitions.onStart({}, () => {
-        element.removeClass('hide')
-      }); // show spinner bar
+      $rootScope.$on('$stateChangeStart', () => element.removeClass('hide')); // show spinner bar
 
       // hide the spinner bar on rounte change success(after the content loaded)
-      $transitions.onSuccess({}, function() {
+      $rootScope.$on('$stateChangeSuccess', function() {
         element.addClass('hide'); // hide spinner bar
         $('body').removeClass('page-on-load'); // remove page loading indicator
       });
 
       // handle errors
-      $transitions.onError({}, () => element.addClass('hide')) // hide spinner bar
+      $rootScope.$on('$stateNotFound', () => element.addClass('hide')) // hide spinner bar
+
+      // handle errors
+      $rootScope.$on('$stateChangeError', () => element.addClass('hide')) // hide spinner bar
     }
   }
 }
 
-spinnerBar.$inject = ['$transitions']
+spinnerBar.$inject = ['$rootScope']
