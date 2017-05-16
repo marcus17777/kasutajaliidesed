@@ -32,14 +32,25 @@
 				<span class="title">Kodu</span>
 				</a>
 			</li>
-			<li uib-accordion-group>
-				<uib-accordion-heading>
-					<a href="javascript:;">
-						<i class="icon-wrench"></i>
-						<span class="title">Registreerimised</span>
-						<span class="arrow "></span>
-					</a>
-				</uib-accordion-heading>
+
+			<script type="text/ng-template" id="register-template.html">
+				<a href="javascript:;" ng-click="toggleOpen()">
+					<i class="icon-wrench"></i>
+					<span class="title">Registreerimised</span>
+					<span class="arrow "></span>
+				</a>
+		    <!-- <div class="panel-collapse collapse" uib-collapse="!isOpen">
+		      <div class="panel-body" style="text-align: right" ng-transclude></div>
+		    </div> -->
+				<div class="panel-collapse collapse" uib-collapse="!isOpen" ng-transclude />
+		  </script>
+
+			<li uib-accordion-group template-url="register-template.html">
+				<!-- <a uib-accordion-heading href="javascript:;">
+					<i class="icon-wrench"></i>
+					<span class="title">Registreerimised</span>
+					<span class="arrow "></span>
+				</a> -->
 				<ul class="sub-menu" style="display: block;">
 					<li>
 						<a href="#/ui_bootstrap.html">
